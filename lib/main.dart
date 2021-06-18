@@ -3,6 +3,8 @@ import 'dart:html';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'ListaTransferencia.dart';
+
 void main() {
   runApp(MaterialApp(
     home: Scaffold(
@@ -14,29 +16,7 @@ void main() {
         child: Icon(Icons.add),
         backgroundColor: Colors.green,
       ),
-      body: Padding(
-        padding: EdgeInsets.all(16),
-        child: Column(
-          children: [
-            Card(
-              child: ListTile(
-                leading: Icon(Icons.monetization_on),
-                title: Text("100.0"),
-                subtitle: Text("1000"),
-              ),
-              color: Colors.amber,
-            ),
-            Card(
-              child: ListTile(
-                leading: Icon(Icons.monetization_on),
-                title: Text("200.0"),
-                subtitle: Text("1000"),
-              ),
-              color: Colors.amber,
-            ),
-          ],
-        ),
-      ),
+      body: ListaTranferencia(),
       bottomNavigationBar: BottomAppBar(
         color: Colors.greenAccent,
         child: Padding(
@@ -51,3 +31,6 @@ void main() {
     ),
   ));
 }
+
+
+
