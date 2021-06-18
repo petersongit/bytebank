@@ -25,7 +25,8 @@ void main() {
                 subtitle: Text("1000"),
               ),
               color: Colors.amber,
-            ),            Card(
+            ),
+            Card(
               child: ListTile(
                 leading: Icon(Icons.monetization_on),
                 title: Text("200.0"),
@@ -37,15 +38,16 @@ void main() {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
-          color: Colors.greenAccent,
-          child: Padding(
-            padding: EdgeInsets.all(16),
-            child: Row(
-              children: [
-                Text("Rodapé"),
-              ],
-            ),
-          )),
+        color: Colors.greenAccent,
+        child: Padding(
+          padding: EdgeInsets.all(16),
+          child: Row(
+            children: [
+              Text("Rodapé"),
+            ],
+          ),
+        ),
+      ),
     ),
   ));
 }
