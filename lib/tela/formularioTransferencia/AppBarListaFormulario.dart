@@ -12,5 +12,5 @@ class AppBarListaFormulario extends StatelessWidget implements PreferredSizeWidg
   }
 
   @override
-  Size get preferredSize =>Size.fromHeight(100);
+  Size get preferredSize =>Size.fromHeight(50);
 }

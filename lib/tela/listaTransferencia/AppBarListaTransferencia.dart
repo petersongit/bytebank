@@ -7,7 +7,7 @@ class AppBarListaTransferencia extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.green,
+      backgroundColor: Colors.blue,
       title: Text("Transfêrencias"),
     );
   }

@@ -17,3 +17,16 @@ class ItemTransferencia extends StatelessWidget {
     );
   }
 }
+
+class Trasnferencia{
+  final int _conta;
+  final double _valor;
+
+
+  Trasnferencia(this._conta, this._valor);
+
+  @override
+  String toString() {
+    return 'Trasnferencia{_conta: $_conta, _valor: $_valor}';
+  }
+}

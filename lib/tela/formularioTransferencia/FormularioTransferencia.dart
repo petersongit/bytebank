@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'AppBarListaFormulario.dart';
+import '../listaTransferencia/ItemTransferencia.dart';
 
 class FormularioTransferencia extends StatelessWidget {
-  const FormularioTransferencia({Key key}) : super(key: key);
+  //const FormularioTransferencia({Key key}) : super(key: key);
+
+  TextEditingController _controllerConta = TextEditingController();
+  TextEditingController _controllerValor = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +19,7 @@ class FormularioTransferencia extends StatelessWidget {
             TextField(
               keyboardType: TextInputType.number,
               style: TextStyle(fontSize: 24),
+              controller: _controllerConta,
               decoration: InputDecoration(
                   labelText: 'Número da conta', hintText: '0000'),
               maxLength: 4,
@@ -22,6 +27,7 @@ class FormularioTransferencia extends StatelessWidget {
             TextField(
               keyboardType: TextInputType.number,
               style: TextStyle(fontSize: 24),
+              controller: _controllerValor,
               decoration: InputDecoration(
                   labelText: 'Valor',
                   hintText: 'Valor',
@@ -36,7 +42,15 @@ class FormularioTransferencia extends StatelessWidget {
                     'Confirmar',
                     style: TextStyle(fontSize: 24),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    final int conta = int.tryParse(_controllerConta.text);
+                    final double valor = double.tryParse(_controllerValor.text);
+
+                    if (conta != null && valor != null) {
+                      Trasnferencia trasferebcia = Trasnferencia(conta, valor);
+                      print(trasferebcia.toString());
+                    }
+                  },
                 ),
               ),
             )
