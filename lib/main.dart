@@ -2,35 +2,23 @@ import 'dart:html';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'tela/listaTransferencia/ListaTransferencia.dart';
 
-import 'ListaTransferencia.dart';
+import 'tela/formularioTransferencia/FormularioTransferencia.dart';
+
 
 void main() {
-  runApp(MaterialApp(
-    home: Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.green,
-        title: Text("Transfêrencias"),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        backgroundColor: Colors.green,
-      ),
-      body: ListaTranferencia(),
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.greenAccent,
-        child: Padding(
-          padding: EdgeInsets.all(16),
-          child: Row(
-            children: [
-              Text("Rodapé"),
-            ],
-          ),
-        ),
-      ),
-    ),
-  ));
+  runApp(ByteBank());
 }
 
+class ByteBank extends StatelessWidget {
+  const ByteBank({Key key}) : super(key: key);
 
-
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      //home: ListaTransferencia(),
+      home: FormularioTransferencia(),
+    );
+  }
+}
