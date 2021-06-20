@@ -8,6 +8,7 @@ class ListaTransferenciaFloatingActionButton extends StatelessWidget {
     return FloatingActionButton(
       child: Icon(Icons.add),
       backgroundColor: Colors.green,
+      onPressed: (){},
     );
   }
 }
