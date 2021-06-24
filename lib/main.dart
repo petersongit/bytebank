@@ -1,8 +1,6 @@
+import 'package:bytebank/tela/listaTransferencia/ListaTransferencia.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import 'tela/formularioTransferencia/FormularioTransferencia.dart';
-
 
 void main() {
   runApp(ByteBank());
@@ -15,7 +13,15 @@ class ByteBank extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       //home: ListaTransferencia(),
-      home: FormularioTransferencia(),
+      home: ListaTransferencia(),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: Colors.green[900],
+        accentColor: Colors.blue[700],
+        buttonTheme: ButtonThemeData(
+            buttonColor: Colors.green[700],
+            textTheme: ButtonTextTheme.primary),
+      ),
     );
   }
 }

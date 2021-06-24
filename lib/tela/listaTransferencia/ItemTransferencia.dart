@@ -1,32 +1,30 @@
 import 'package:flutter/material.dart';
 
 class ItemTransferencia extends StatelessWidget {
-  final double _valor;
-  final double _conta;
+  final Transferencia _transferencia;
 
-  ItemTransferencia(this._valor, this._conta);
+  ItemTransferencia(this._transferencia);
 
   @override
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
         leading: Icon(Icons.monetization_on),
-        title: Text(_valor.toString()),
-        subtitle: Text(_conta.toString()),
+        title: Text(_transferencia.conta.toString()),
+        subtitle: Text(_transferencia.valor.toString()),
       ),
     );
   }
 }
 
-class Trasnferencia{
-  final int _conta;
-  final double _valor;
+class Transferencia {
+  int conta;
+  double valor;
 
-
-  Trasnferencia(this._conta, this._valor);
+  Transferencia(this.conta, this.valor);
 
   @override
   String toString() {
-    return 'Trasnferencia{_conta: $_conta, _valor: $_valor}';
+    return 'Trasnferencia{_conta: $conta, _valor: $valor}';
   }
 }

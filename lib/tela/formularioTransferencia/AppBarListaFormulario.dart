@@ -7,7 +7,6 @@ class AppBarListaFormulario extends StatelessWidget implements PreferredSizeWidg
   Widget build(BuildContext context) {
     return AppBar(
       title: Text('Criando Tranferência'),
-      backgroundColor: Colors.blue,
     );
   }
 

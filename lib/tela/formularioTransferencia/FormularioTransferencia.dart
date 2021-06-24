@@ -14,45 +14,50 @@ class FormularioTransferencia extends StatelessWidget {
       appBar: AppBarListaFormulario(),
       body: Container(
         padding: EdgeInsets.all(32),
-        child: Column(
-          children: [
-            TextBox(
-                fontSize: 24,
-                rotulo: 'Número da conta',
-                dica: '0000',
-                controlador: _controllerConta),
-            TextBox(
-                fontSize: 24,
-                rotulo: 'Valor',
-                dica: 'Valor',
-                controlador: _controllerValor,
-                icone: Icons.monetization_on),
-            Padding(
-              padding: const EdgeInsets.all(24),
-              child: Center(
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(primary: Colors.blue),
-                  child: Text(
-                    'Confirmar',
-                    style: TextStyle(fontSize: 24),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              TextBox(
+                  fontSize: 24,
+                  rotulo: 'Número da conta',
+                  dica: '0000',
+                  controlador: _controllerConta),
+              TextBox(
+                  fontSize: 24,
+                  rotulo: 'Valor',
+                  dica: 'Valor',
+                  controlador: _controllerValor,
+                  icone: Icons.monetization_on),
+              Padding(
+                padding: const EdgeInsets.all(24),
+                child: Center(
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(primary: Colors.blue),
+                    child: Text(
+                      'Confirmar',
+                      style: TextStyle(fontSize: 24),
+                    ),
+                    onPressed: () {
+                      _realizarTransferencia(context);
+                    }
                   ),
-                  onPressed: _realizarTransferencia,
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
   }
 
-  void _realizarTransferencia() {
+  void _realizarTransferencia(BuildContext context) {
     final int conta = int.tryParse(_controllerConta.text);
     final double valor = double.tryParse(_controllerValor.text);
 
     if (conta != null && valor != null) {
-      Trasnferencia trasferebcia = Trasnferencia(conta, valor);
-      print(trasferebcia.toString());
+      Transferencia transferencia = Transferencia(conta, valor);
+      print(transferencia.toString());
+      Navigator.pop(context, transferencia);
     }
   }
 }
