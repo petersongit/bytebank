@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
 
-class RodapeListaTransferencia extends StatelessWidget
+class Rodape extends StatelessWidget
     implements PreferredSizeWidget {
-  const RodapeListaTransferencia({Key key}) : super(key: key);
+  //const Rodape({Key key}) : super(key: key);
+
+  final double _padding;
+  final String _rotulo;
+  final Color _cor;
+
+  Rodape(this._padding, this._rotulo, this._cor);
 
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-      color: Colors.green,
+      color: this._cor,
       child: Padding(
-        padding: EdgeInsets.all(16),
+        padding: EdgeInsets.all(this._padding),
         child: Row(
           children: [
-            Text("Rodapé"),
+            Text(this._rotulo),
           ],
         ),
       ),

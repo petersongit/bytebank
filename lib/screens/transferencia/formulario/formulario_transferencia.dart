@@ -1,6 +1,14 @@
+import 'package:bytebank/components/appbar.dart';
 import 'package:flutter/material.dart';
-import 'AppBarListaFormulario.dart';
-import '../listaTransferencia/ItemTransferencia.dart';
+import 'package:bytebank/components/textbox.dart';
+import 'package:bytebank/models/transferencia.dart';
+
+const String _rotuloCampoNumeroConta = 'Número da conta';
+const String _dicaCampoNumeroConta = '0000';
+const String _rotuloCampoValor = 'Valor';
+const String _dicaCampoValor = '0.00';
+
+const String _tituloAppBar = 'Criando Transferência';
 
 class FormularioTransferencia extends StatelessWidget {
   //const FormularioTransferencia({Key key}) : super(key: key);
@@ -11,7 +19,7 @@ class FormularioTransferencia extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarListaFormulario(),
+      appBar: AppBarCustom(_tituloAppBar),
       body: Container(
         padding: EdgeInsets.all(32),
         child: SingleChildScrollView(
@@ -19,13 +27,13 @@ class FormularioTransferencia extends StatelessWidget {
             children: [
               TextBox(
                   fontSize: 24,
-                  rotulo: 'Número da conta',
-                  dica: '0000',
+                  rotulo: _rotuloCampoNumeroConta,
+                  dica: _dicaCampoNumeroConta,
                   controlador: _controllerConta),
               TextBox(
                   fontSize: 24,
-                  rotulo: 'Valor',
-                  dica: 'Valor',
+                  rotulo: _rotuloCampoValor,
+                  dica: _dicaCampoValor,
                   controlador: _controllerValor,
                   icone: Icons.monetization_on),
               Padding(
@@ -62,27 +70,4 @@ class FormularioTransferencia extends StatelessWidget {
   }
 }
 
-class TextBox extends StatelessWidget {
-  //const TextBox({Key key}) : super(key: key);
-  final double fontSize;
-  final String rotulo;
-  final String dica;
-  final TextEditingController controlador;
-  final IconData icone;
 
-  TextBox(
-      {this.fontSize, this.rotulo, this.dica, this.controlador, this.icone});
-
-  @override
-  Widget build(BuildContext context) {
-    return TextField(
-      keyboardType: TextInputType.number,
-      style: TextStyle(fontSize: fontSize),
-      controller: controlador,
-      decoration: InputDecoration(
-          labelText: rotulo,
-          hintText: dica,
-          icon: icone != null ? Icon(icone) : null),
-    );
-  }
-}

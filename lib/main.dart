@@ -1,4 +1,4 @@
-import 'package:bytebank/tela/listaTransferencia/ListaTransferencia.dart';
+import 'package:bytebank/screens/transferencia/lista/lista_transferencia.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
